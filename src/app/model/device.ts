@@ -1,7 +1,7 @@
 import { BaseModel } from "./base";
 
 export class Device extends BaseModel {
-    public uuid: string;
+    public udid: string;
     public name: string;
     public description: string;
     public expire: number;
@@ -16,7 +16,7 @@ export class Device extends BaseModel {
 
     constructor() {
         super();
-        this.uuid = '';
+        this.udid = '';
         this.name = '';
         this.description = '';
         this.expire = 0;
