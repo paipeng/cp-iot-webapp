@@ -4,7 +4,7 @@ import { RecordService } from '../service/record.service';
 import { Router } from '@angular/router';
 import { CommonService } from '../service/common.service';
 import { TranslateService } from '@ngx-translate/core';
-
+import * as _ from 'lodash';
 @Component({
   selector: 'app-histories',
   templateUrl: './histories.component.html',
@@ -30,7 +30,9 @@ export class HistoriesComponent implements OnInit {
 
     this.recordService.query().subscribe((res: any) => {
         console.log(res);
-        this.records = res;
+        this.records = _.sortBy(res, (item) => {
+					return -item.id;
+				});
         //this.commonService.closeLoadingDialog();
     }, (error) => {
         this.commonService.handleResponseError(error.status);
