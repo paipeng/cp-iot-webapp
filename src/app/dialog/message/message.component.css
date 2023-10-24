@@ -1,0 +1,25 @@
+.message {
+    width: 300px;
+    text-align: center;
+}
+
+.close {
+    text-align: right;
+    color: #dbdbdb;
+    margin-top: -18px;
+    margin-right: -18px;
+}
+
+.close>img {
+    cursor: pointer;
+}
+
+.title {
+    font-size: 20px;
+}
+
+.tips {
+    margin-top: 20px;
+    text-align: center;
+    color: red;
+}

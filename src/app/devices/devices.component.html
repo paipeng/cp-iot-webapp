@@ -1,0 +1,41 @@
+<div class="page-container">
+    <div class="page-header mat-headline-1">
+        <div class="title">{{'devices' | translate}}</div>
+    </div>
+
+    <div class="page-content">
+        <!--
+        <mat-list role="list">
+            <mat-list-item role="listitem">Item 1</mat-list-item>
+            <mat-list-item role="listitem">Item 2</mat-list-item>
+            <mat-list-item role="listitem">Item 3</mat-list-item>
+          </mat-list>
+          -->
+
+          <mat-list *ngFor="let device of devices">
+            <mat-list-item class="list-item" (click)="getDevice(device)">
+              <span matListItemTitle class="list-item-left">{{device.name}}</span>
+              <span matListItemLine>{{device.description}}</span>
+            </mat-list-item>
+    
+        </mat-list>
+    
+    </div>
+
+<!--    
+    <mat-list>
+        <mat-list-item>
+          <span matListItemTitle class="list-item-left">Pepper</span>
+          <span matListItemLine>Produced by a plant</span>
+        </mat-list-item>
+        <mat-list-item>
+          <span matListItemTitle class="list-item-left">Salt</span>
+          <span matListItemLine>Extracted from sea water</span>
+        </mat-list-item>
+        <mat-list-item>
+          <span matListItemTitle class="list-item-left">Paprika</span>
+          <span matListItemLine>Produced by dried and ground red peppers</span>
+        </mat-list-item>
+      </mat-list>
+      -->
+</div>

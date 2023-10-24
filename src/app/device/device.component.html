@@ -1,0 +1,59 @@
+<div class="page-container">
+    <div class="page-header mat-headline-1">
+        <div>
+            <a [routerLink]="['/home']">
+                <img src="./assets/images/icons/arrow_left.svg">
+            </a>    
+        </div>
+        <div class="title">
+            {{deviceName}}</div>
+    </div>
+
+    <div class="page-content">
+          <mat-list *ngIf="device!=null">
+            <mat-list-item class="list-item">
+              <span matListItemTitle class="list-item-left text-left">{{'led' | translate}}</span>
+              <span matListItemLine class="text-right">
+                <mat-slide-toggle></mat-slide-toggle>
+              </span>
+            </mat-list-item>
+
+            <mat-list-item class="list-item">
+                <span matListItemTitle class="list-item-left text-left">{{'temperature' | translate}}</span>
+                <span matListItemLine class="text-right">
+                  {{device.temperature}}
+                </span>
+            </mat-list-item>
+
+            <mat-list-item class="list-item">
+                <span matListItemTitle class="list-item-left text-left">{{'photosensitive' | translate}}</span>
+                <span matListItemLine class="text-right">
+                  {{device.photosensitive}}
+                </span>
+            </mat-list-item>
+
+            <mat-list-item class="list-item">
+                <span matListItemTitle class="list-item-left text-left">{{'voice_control' | translate}}</span>
+                <span matListItemLine class="text-right">
+                  {{device.voiceControl}}
+                </span>
+            </mat-list-item>
+
+            <mat-list-item class="list-item">
+                <span matListItemTitle class="list-item-left text-left">{{'location' | translate}}</span>
+                <span matListItemLine class="text-right">
+                  {{device.location}}
+                </span>
+            </mat-list-item>
+
+            <mat-list-item class="list-item">
+                <span matListItemTitle class="list-item-left text-left">{{'message_board' | translate}}</span>
+                <span matListItemLine class="text-right">
+                  {{device.messageBoard}}
+                </span>
+            </mat-list-item>
+    
+        </mat-list>
+    
+    </div>
+</div>

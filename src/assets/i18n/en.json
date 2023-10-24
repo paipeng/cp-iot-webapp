@@ -1,0 +1,15 @@
+{
+    "id": "ID",
+    "createTime": "create time",
+    "inputValidationCode": "input validation code",
+    "select": "select",
+    "logisticsNumber": "logistics number",
+    "captcha": "captcha",
+    "s2iPdtSerialNo": "s2iPdtSerialNo",
+    "productSerialnumber": "product serialnumber",
+    "the": "the",
+    "frequency": "frequency",
+    "position": "position",
+    "goLottery": "click go lottery",
+    "goMarketingLink": "click go marketing link"
+}

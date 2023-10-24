@@ -1,0 +1,27 @@
+<div class="page-container">
+    <div class="page-header mat-headline-1">
+        <div class="title">{{'histories' | translate}}</div>
+    </div>
+
+    <div class="page-content">
+          <mat-list *ngFor="let record of records">
+            <mat-list-item class="list-item" (click)="getDevice(record)">
+              <span matListItemTitle class="list-item-left">
+                <div mat-line>
+                    {{getTypeName(record.recordType)}}
+                </div>
+                <div mat-line>
+                    {{record.value}}
+
+                </div>
+            </span>
+              <span matListItemLine mat-line>
+                {{record.deviceName}}
+              </span>
+              
+            </mat-list-item>
+    
+        </mat-list>
+    
+    </div>
+</div>

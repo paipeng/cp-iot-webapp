@@ -1,0 +1,43 @@
+#container {
+    height: 100vh; 
+    background: white;
+    padding: 0;
+    margin: 0;
+    width: 63.4%;
+    margin-left: 36.6%;
+    min-height: 100%;
+}
+
+.page-header {
+    background-color: crimson;
+    padding: 14px;
+}
+
+.title {
+    font-size: 22px;
+    font-weight: bolder;
+    color: antiquewhite;
+    text-align: center;
+}
+
+.page-container {
+    height: 91vh; 
+    background: white;
+    //
+    //margin: 10px;
+    //width: 63.4%;
+    //margin-left: 36.6%;
+    min-height: 100%;
+}
+
+.page-content {
+    //padding: 10px;
+}
+
+.list-item-left {
+    padding-right: 5px;
+}
+
+.list-item {
+    border-style: none none solid none;
+}

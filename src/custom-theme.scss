@@ -1,0 +1,11 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+$cpIoTWebapp-primary: mat-palette($mat-green);
+$cpIoTWebapp-accent: mat-palette($mat-green);
+$cpIoTWebapp-warn: mat-palette($mat-red);
+
+$cpIoTWebapp-theme: mat-light-theme($cpIoTWebapp-primary, $cpIoTWebapp-accent, $cpIoTWebapp-warn);
+
+@include angular-material-theme($cpIoTWebapp-theme);

@@ -1,0 +1,26 @@
+<div class="page-container">
+    <div class="page-header mat-headline-1">
+        <div class="title">{{'user' | translate}}</div>
+    </div>
+
+    <div class="page-content">
+
+
+        <div class="center">
+            <div class="center avatar">
+                <img src="assets/images/avatar.png"/>
+            </div>
+
+            <mat-list>
+                <mat-list-item>
+                  <span matListItemTitle class="list-item-left text-left">{{ 'username' | translate}}</span>
+                  <span matListItemLine class="text-right">{{user.username}}</span>
+                </mat-list-item>
+                
+              </mat-list>
+
+
+            <div class="btn" (click)="logout()">{{'logout'|translate}}</div>
+        </div>
+    </div>
+</div>

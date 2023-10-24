@@ -1,0 +1,147 @@
+<div class="login">
+	<div class="header">
+		<img src="./assets/images/app-icon.webp" class="logo" (click)="goWebsite()">
+		<div class="title">{{'title' | translate}}</div>
+	</div>
+
+	<div class="container">
+		<div class="content">
+        <!--
+			<div class="icon">
+				<div (click)="changeQrCodeLoginFlag(true)" *ngIf="!qrCodeLoginFlag">
+					<img src="./assets/images/login_scan.png">
+				</div>
+				<div (click)="changeQrCodeLoginFlag(false)" *ngIf="qrCodeLoginFlag">
+					<img src="./assets/images/login_local.png">
+				</div>
+			</div>
+-->
+			<div *ngIf="!qrCodeLoginFlag">
+                <!--
+				<div class="title">
+					<div class="tilte-item" [ngClass]="{'activated': loginModel.type==0}"
+						(click)="loginModel.type=0">
+						账号登录
+					</div>
+					<div class="tilte-item" [ngClass]="{'activated': loginModel.type==1}"
+						(click)="loginModel.type=1">
+						手机号登录
+					</div>
+				</div>
+                -->
+				<form ngNoForm class="form">
+					<div *ngIf="type==0">
+						<input type="text" placeholder="{{'input_username' | translate}}" autocomplete="off"
+							class="input-control" [(ngModel)]="loginModel.username"
+							(input)="checkUsername($event)">
+					</div>
+					<div *ngIf="type==1">
+						<input type="text" placeholder="{{'input_mobilephone' | translate}}" autocomplete="off"
+							class="input-control" [(ngModel)]="loginModel.mobilePhone"
+							(input)="checkMobilePhone($event)">
+					</div>
+
+					<div *ngIf="type==0">
+						<input type="text" placeholder="{{'input_password' | translate}}" autocomplete="off"
+							class="input-control" [ngClass]="{'password': passwordFlag}"
+							[(ngModel)]="loginModel.password"
+							(input)="checkPassword($event)">
+						<div class="passwordImage" (click)="changePasswordFlag()">
+							<img [src]="passwordImage">
+						</div>
+					</div>
+
+                    <!--
+					<div>
+						<input type="text" placeholder="{{'input_captcha' | translate}}" autocomplete="off"
+							class="input-control" [(ngModel)]="loginModel.code"
+							(keypress)="keypress($event)" (input)="checkCode($event)">
+						<div class="code-image">
+							<img src="{{codeImage}}" (click)="getCode()">
+							<div class="code-again" *ngIf="codeInvalid">
+								<div class="background"></div>
+								<img src="./assets/images/icon/again_primary.svg"
+									class="icon" (click)="getCode()">
+							</div>
+						</div>
+					</div>
+                    -->
+					<div class="short-message" *ngIf="loginModel.type==1">
+						<input type="text" placeholder="{{'input_sms_code' | translate}}" autocomplete="off"
+							class="item1" [(ngModel)]="loginModel.smsCode"
+							(keypress)="keypress($event)" (input)="checkSmsCode($event)">
+						<input type="text" class="item2" [value]="shortMessageText" readonly
+							(click)="getSmsCode()">
+					</div>
+
+					<div>
+						<div class="btn" (click)="login()">{{'login'|translate}}</div>
+					</div>
+				</form>
+
+				<div class="save-username" *ngIf="loginModel.type==0">
+					<input type="checkbox" [(ngModel)]="saveUsername" (change)="checkChanged()">
+					{{'save_username'|translate}}
+				</div>
+				<div class="save-username" *ngIf="loginModel.type==1">
+					<input type="checkbox" [(ngModel)]="saveMobilePhone" (change)="checkChanged()">
+					
+                    {{'save_mobilephone'|translate}}
+				</div>
+			</div>
+
+			<div class="scan" *ngIf="qrCodeLoginFlag">
+
+
+				<div class="scan-title">手机扫码&nbsp;,&nbsp;安全登录</div>
+
+				<div class="scan-image">
+					<div class="qr-code">
+
+						<!-- 带扫描 -->
+						<qr-code [value]="qrCodeUrl" size="178" *ngIf="loginQRcodeImgDisplays"
+							errorCorrectionLevel="M"></qr-code>
+						<!-- 待确认 -->
+						<div class="qr-code-again" *ngIf="qrcodeType==1">
+							<div class="background"></div>
+							<img src="./assets/images/icon/valid_1.svg" class="icon"
+								(click)="getQrCode()">
+							<div class="info-wait-title">扫描成功!</div>
+							<div class="info-wait-description">请在手机上根据提示确认登录</div>
+						</div>
+						<!-- 已过期-->
+						<div class="qr-code-again" *ngIf="qrcodeType==0">
+							<div class="background"></div>
+							<img src="./assets/images/icon/again.svg" class="icon"
+								(click)="getQrCode()">
+							<div class="info">点击重新刷新</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="scan-tip" *ngIf="loginQRcodeImgDisplays">
+					<img src="./assets/images/login_scan.svg" class="tip-icon">
+					<div class="tip-message">
+						<div>打开安迅追溯App</div>
+						<div>扫一扫登录</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="footer">
+		<div class="copyright">
+			{{'copyright' | translate}} {{'version' | translate}}: {{ version}}<br />{{'register_id' |
+			translate}}
+		</div>
+
+		<div class="qrcode">
+			<div class="inner">
+				<img class="logo" src="./assets/images/app-icon.webp">
+				<div class="title"><!--关注微信公众号--></div>
+			</div>
+
+		</div>
+	</div>
+</div>
