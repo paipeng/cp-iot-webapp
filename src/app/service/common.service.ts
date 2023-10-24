@@ -22,7 +22,7 @@ export class CommonService {
     public mobilePhoneReg = /^1\d{10}$/;
     public emailReg = /^\S+@\S+.\S+$/;
 
-    public webSocketUrl = 'ws://localhost:8080/websocket/live/';
+    public webSocketUrl = 'ws://192.168.1.228/wss/websocket/live/';
 
 	constructor(
         private http: HttpClient,
