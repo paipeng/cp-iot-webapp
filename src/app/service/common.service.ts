@@ -164,4 +164,16 @@ export class CommonService {
         return stringArr.join('-');
     }
 
+    getTypeName(recordType) {
+        //console.info('getTypeName: ' + recordType);
+        if (recordType === 1) {
+          return this.translate.instant('temperature')
+        } else if (recordType === 2) {
+          return this.translate.instant('photosensitive')
+        } else if (recordType === 3) {
+          return this.translate.instant('message_board')
+        } else if (recordType === 6) {
+          return this.translate.instant('ping');
+        }
+      }
 }

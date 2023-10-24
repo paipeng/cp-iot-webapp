@@ -45,15 +45,7 @@ export class HistoriesComponent implements OnInit {
   }
 
   getTypeName(recordType) {
-    //console.info('getTypeName: ' + recordType);
-    if (recordType === 1) {
-      return this.translateService.instant('temperature')
-    } else if (recordType === 2) {
-      return this.translateService.instant('photosensitive')
-    } else if (recordType === 3) {
-      return this.translateService.instant('message_board')
-    } else if (recordType === 6) {
-      return this.translateService.instant('ping');
-    }
+    return this.commonService.getTypeName(recordType);
+
   }
 }
