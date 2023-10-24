@@ -8,6 +8,7 @@ import { fromEvent } from 'rxjs';
 import { JsogService } from 'jsog-typescript';
 import * as _ from 'lodash';
 import { CommonService } from '../service/common.service';
+import { RECORD_TYPE, Record } from '../model/record';
 
 @Component({
     selector: 'app-home',
@@ -187,10 +188,16 @@ export class HomeComponent implements OnInit {
             console.log('websocket监听: ' + msg.data);
 
             try {
-                const res = JSON.parse(msg.data);
-                if (res) {
-                    console.log(res)
-                    
+                const record = <Record>JSON.parse(msg.data);
+                if (record) {
+                    console.log(record)
+                    var data = {title: '', message: ''};
+
+                    data.title = this.commonService.getTypeName(record.recordType);
+                    if (record.recordType == RECORD_TYPE.TEMPERATURE) {
+                        data.message = record.deviceName + ' ' + record.value + ' °C'
+                    }
+                    this.commonService.openMessageDialog(data);
                 }
             } catch (e) {
                 console.log('返回json错误: ' + e);
