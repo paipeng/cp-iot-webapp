@@ -49,11 +49,11 @@
     "save_username": "保存用户名",
     "username": "用户名",
     "save_mobilephone": "保存手机号",
-    "led": "LED灯",
     "temperature": "温度",
     "photosensitive": "亮度",
     "voice_control": "声控",
     "location": "位置",
     "message_board": "留言板",
-    "ping": "PING"
+    "ping": "PING",
+    "led": "LED 灯"
 }

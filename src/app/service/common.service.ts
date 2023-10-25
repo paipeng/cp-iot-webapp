@@ -174,6 +174,8 @@ export class CommonService {
           return this.translate.instant('message_board')
         } else if (recordType === 6) {
           return this.translate.instant('ping');
-        }
+        } else if (recordType === 7) {
+            return this.translate.instant('led');
+          }
       }
 }
