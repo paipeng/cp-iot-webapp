@@ -21,4 +21,9 @@ export class DeviceService {
     return this.http.get<Device>(this.common.api + '/devices/' + deviceId);
 
   }
+
+  updateLedState(deviceId: number, state: number): Observable<Device> {
+    return this.http.get<Device>(this.common.api + '/devices/' + deviceId + '/led/' + state);
+
+  }
 }

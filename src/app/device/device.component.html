@@ -14,7 +14,7 @@
             <mat-list-item class="list-item">
               <span matListItemTitle class="list-item-left text-left">{{'led' | translate}}</span>
               <span matListItemLine class="text-right">
-                <mat-slide-toggle></mat-slide-toggle>
+                <mat-slide-toggle name="deviceLed" (change)="updateLedState($event, device.id)"></mat-slide-toggle>
               </span>
             </mat-list-item>
 

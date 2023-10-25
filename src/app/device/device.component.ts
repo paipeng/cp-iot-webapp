@@ -5,6 +5,7 @@ import { DeviceService } from '../service/device.service';
 import { Device } from '../model/device';
 import { TranslateService } from '@ngx-translate/core';
 
+
 @Component({
   selector: 'app-device',
   templateUrl: './device.component.html',
@@ -13,6 +14,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class DeviceComponent implements OnInit {
   public device: Device;
   public deviceName: String;
+  public deviceLed: boolean = false;
   constructor(
     private router: Router,
     private commonService: CommonService,
@@ -38,8 +40,20 @@ export class DeviceComponent implements OnInit {
       //this.commonService.closeLoadingDialog();
       this.deviceName = this.translateService.instant('device') + ': ' + this.device.name;
 
-  }, (error) => {
-      this.commonService.handleResponseError(error.status);
-  });
+    }, (error) => {
+        this.commonService.handleResponseError(error.status);
+    });
+  }
+
+  updateLedState(event, deviceId) {
+    console.info('updateLedState: ' + deviceId + ' state: ' + this.deviceLed);
+    this.deviceLed != this.deviceLed;
+    this.deviceService.updateLedState(deviceId, this.deviceLed?1:0).subscribe((res: Device) => {
+      console.log(res);
+      this.device = res;
+      this.deviceName = this.translateService.instant('device') + ': ' + this.device.name;
+    }, (error) => {
+        this.commonService.handleResponseError(error.status);
+    });
   }
 }
