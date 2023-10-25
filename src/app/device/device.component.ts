@@ -47,7 +47,7 @@ export class DeviceComponent implements OnInit {
 
   updateLedState(event, deviceId) {
     console.info('updateLedState: ' + deviceId + ' state: ' + this.deviceLed);
-    this.deviceLed != this.deviceLed;
+    this.deviceLed = !this.deviceLed;
     this.deviceService.updateLedState(deviceId, this.deviceLed?1:0).subscribe((res: Device) => {
       console.log(res);
       this.device = res;
