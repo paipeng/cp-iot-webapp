@@ -46,11 +46,18 @@
                 </span>
             </mat-list-item>
 
-            <mat-list-item class="list-item">
+            <mat-list-item class="list-item message_board">
                 <span matListItemTitle class="list-item-left text-left">{{'message_board' | translate}}</span>
                 <span matListItemLine class="text-right">
-                  {{device.messageBoard}}
+                  <mat-form-field class="example-full-width">
+                    <mat-label>Leave a comment</mat-label>
+                    <textarea matInput placeholder="Ex. It makes me feel..." [(ngModel)]="message" ></textarea>
+                  </mat-form-field>
+                  <br/>
+                  <button mat-button color="primary" type="button" class="btn primary-btn" (click)="updateMessageBoard(device.id)">{{'send' | translate}}</button>
                 </span>
+
+                
             </mat-list-item>
     
         </mat-list>

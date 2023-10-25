@@ -55,5 +55,6 @@
     "location": "位置",
     "message_board": "留言板",
     "ping": "PING",
-    "led": "LED 灯"
+    "led": "LED 灯",
+    "send": "发送"
 }
