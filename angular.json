@@ -69,8 +69,8 @@
               ]
             },
             "live": {
-              "baseHref": "/web/",
-              "deployUrl": "/web/",
+              "baseHref": "/app/",
+              "deployUrl": "/app/",
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
