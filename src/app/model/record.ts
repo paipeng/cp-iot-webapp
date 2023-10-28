@@ -7,7 +7,8 @@ export enum RECORD_TYPE {
     MESSAGE,
     VOICE,
     DEVICE_STATE,
-    PING
+    PING,
+    LED
   }
 
 

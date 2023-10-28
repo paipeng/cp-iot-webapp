@@ -56,5 +56,11 @@
     "message_board": "留言板",
     "ping": "PING",
     "led": "LED 灯",
-    "send": "发送"
+    "send": "发送",
+    "loading": "加载数据中，请等待",
+    "pager": "BP机",
+    "send_user": "发送人",
+    "receiver_user": "接收人",
+    "pager_message": "留言",
+    "pager_send_success": "消息发送成功"
 }

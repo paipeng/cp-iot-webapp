@@ -14,7 +14,7 @@
             <mat-list>
                 <mat-list-item>
                   <span matListItemTitle class="list-item-left text-left">{{ 'username' | translate}}</span>
-                  <span matListItemLine class="text-right">{{user.username}}</span>
+                  <span matListItemLine class="text-right" *ngIf="user">{{user.username}}</span>
                 </mat-list-item>
                 
               </mat-list>

@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
     qrCodeUrl = '';
     loginModel: User = new User();
     passwordFlag = true;
-    passwordImage = '../assets/images/password_hide.png';
+    passwordImage = './assets/images/password_hide.png';
     codeImage = '';
     shortMessageText = '获取验证码';
     shortMessageSecond = 60;
@@ -77,9 +77,9 @@ export class LoginComponent implements OnInit {
     changePasswordFlag() {
         this.passwordFlag = !this.passwordFlag;
         if (this.passwordFlag) {
-            this.passwordImage = '../assets/images/password_hide.png';
+            this.passwordImage = './assets/images/password_hide.png';
         } else {
-            this.passwordImage = '../assets/images/password_show.png';
+            this.passwordImage = './assets/images/password_show.png';
         }
     }
 

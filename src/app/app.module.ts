@@ -21,6 +21,8 @@ import { DevicesComponent } from './devices/devices.component';
 import { HistoriesComponent } from './histories/histories.component';
 import { UserComponent } from './user/user.component';
 import { UniversalInterceptor } from './service/universal.interceptor';
+import { PagerComponent } from './pager/pager.component';
+import { LoadingComponent } from './dialog/loading/loading.component';
 
 export function createTranslateLoader(http: HttpClient) {
     return new TranslateHttpLoader(http, './assets/i18n/', '.json?v=' + Date.now());
@@ -34,7 +36,9 @@ export function createTranslateLoader(http: HttpClient) {
         DeviceComponent,
         DevicesComponent,
         HistoriesComponent,
-        UserComponent
+        UserComponent,
+        PagerComponent,
+        LoadingComponent
     ],
     imports: [
         BrowserModule,

@@ -1,7 +1,7 @@
 import { CPIoTBase } from "./cpiotbase";
 
 
-export class CPIoTMessageBoard extends CPIoTBase {
+export class CPIOTMessageBoard extends CPIoTBase {
     public message: string;
 
     constructor() {

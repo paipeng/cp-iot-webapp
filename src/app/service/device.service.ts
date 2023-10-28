@@ -4,7 +4,7 @@ import { CommonService } from './common.service';
 import { HttpClient } from '@angular/common/http';
 import { Device } from '../model/device';
 import { Observable } from 'rxjs';
-import { CPIoTMessageBoard } from '../model/cpiotmessageboard';
+import { CPIOTMessageBoard } from '../model/cpiotmessageboard';
 
 @Injectable({
   providedIn: 'root'
@@ -27,7 +27,7 @@ export class DeviceService {
     return this.http.get<Device>(this.common.api + '/devices/' + deviceId + '/led/' + state);
   }
 
-  updateMessageBoard(deviceId: number, messageBoard: CPIoTMessageBoard): Observable<Device> {
+  updateMessageBoard(deviceId: number, messageBoard: CPIOTMessageBoard): Observable<Device> {
     return this.http.post<Device>(this.common.api + '/devices/' + deviceId + '/messageboard', messageBoard);
   }
 }

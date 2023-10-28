@@ -4,7 +4,7 @@ import { CommonService } from '../service/common.service';
 import { DeviceService } from '../service/device.service';
 import { Device } from '../model/device';
 import { TranslateService } from '@ngx-translate/core';
-import { CPIoTMessageBoard } from '../model/cpiotmessageboard';
+import { CPIOTMessageBoard } from '../model/cpiotmessageboard';
 
 
 @Component({
@@ -62,7 +62,7 @@ export class DeviceComponent implements OnInit {
   updateMessageBoard(deviceId: number) {
     console.info('updateMessageBoard: ' + deviceId + ' state: ' + this.deviceLed);
 
-    let messageBoard = new CPIoTMessageBoard();
+    let messageBoard = new CPIOTMessageBoard();
     messageBoard.message = this.message;
     this.deviceService.updateMessageBoard(deviceId, messageBoard).subscribe((res: Device) => {
       console.log(res);
